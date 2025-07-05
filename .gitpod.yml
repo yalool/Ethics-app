@@ -1,0 +1,13 @@
+tasks:
+  - init: |
+        git clone https://github.com/flutter/flutter.git
+              export PATH="$PATH:`pwd`/flutter/bin"
+                    flutter precache
+                          flutter pub get
+                              command: |
+                                    export PATH="$PATH:`pwd`/flutter/bin"
+                                          flutter run -d chrome --web-port 8080
+
+                                          ports:
+                                            - port: 8080
+                                                onOpen: open-preview
